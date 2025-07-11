@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ITvate Solutions - PCB Training Feedback</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta name="description" content="Share your feedback on ITvate Solutions PCB Design training sessions" />
+  <link rel="icon" href="/favicon2.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1e40af',
+            secondary: '#f59e0b',
+            neutral: {
+              50: '#f9fafb',
+              100: '#f3f4f6',
+              600: '#4b5563',
+              700: '#374151',
+              800: '#1f2937'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .form-transition {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .form-focus:focus {
+      outline: none;
+      border-color: #1e40af;
+      box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-2px);
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    }
+
+    .success-animation {
+      animation: fadeInScale 0.5s ease-out;
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .animate-pulse-slow {
+      animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+  </style>
+</head>
+<body class="bg-neutral-50 min-h-screen">
+  <!-- Header -->
+  <header class="bg-white shadow-sm border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex items-center">
+        <span class="text-2xl font-bold text-neutral-800">IT-vate</span>
+        <span class="text-2xl font-medium text-secondary ml-1">Solutions</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Hero Section -->
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6">
+        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+      </div>
+      <h1 class="text-4xl font-bold text-neutral-800 mb-4">PCB Training Feedback</h1>
+      <p class="text-xl text-neutral-600 max-w-2xl mx-auto">
+        Help us improve our Certified PCB Designer Programme by sharing your experience
+      </p>
+      <div class="mt-6 inline-flex items-center px-4 py-2 bg-primary/5 rounded-full">
+        <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse-slow"></span>
+        <span class="text-sm font-medium text-neutral-700">Your feedback drives our excellence</span>
+      </div>
+    </div>
+
+    <!-- Feedback Form -->
+    <div class="bg-white rounded-xl shadow-lg border border-neutral-200 overflow-hidden">
+      <div class="gradient-bg px-8 py-6">
+        <h2 class="text-2xl font-semibold text-white">Share Your Training Experience</h2>
+        <p class="text-blue-100 mt-2">Your insights help us deliver world-class embedded systems education</p>
+      </div>
+
+      <form action="https://formspree.io/f/xvgreldn" method="POST" id="feedbackForm" class="p-8 space-y-8">
+        <!-- Session Rating -->
+        <div class="space-y-3">
+          <label for="rating" class="block text-sm font-semibold text-neutral-700">
+            How would you rate the overall session quality?
+          </label>
+          <select name="Session Rating" id="rating" 
+                  class="w-full px-4 py-3 border border-neutral-300 rounded-lg form-focus form-transition bg-white text-neutral-900">
+            <option value="">Select your rating...</option>
+            <option value="Excellent">⭐⭐⭐⭐⭐ Excellent</option>
+            <option value="Good">⭐⭐⭐⭐ Good</option>
+            <option value="Average">⭐⭐⭐ Average</option>
+            <option value="Poor">⭐⭐ Poor</option>
+            <option value="Very Poor">⭐ Very Poor</option>
+          </select>
+        </div>
+
+        <!-- Instructor Clarity -->
+        <div class="space-y-3">
+          <label for="clarity" class="block text-sm font-semibold text-neutral-700">
+            How clear were the instructor's explanations of PCB design concepts?
+          </label>
+          <select name="Instructor Clarity" id="clarity" 
+                  class="w-full px-4 py-3 border border-neutral-300 rounded-lg form-focus form-transition bg-white text-neutral-900">
+            <option value="">Choose clarity level...</option>
+            <option value="Very Clear">Very Clear - Easy to follow</option>
+            <option value="Clear">Clear - Mostly understandable</option>
+            <option value="Somewhat Clear">Somewhat Clear - Some confusion</option>
+            <option value="Unclear">Unclear - Difficult to understand</option>
+          </select>
+        </div>
+
+        <!-- Content Relevance -->
+        <div class="space-y-3">
+          <label for="relevance" class="block text-sm font-semibold text-neutral-700">
+            How relevant was the content to your professional goals?
+          </label>
+          <select name="Content Relevance" id="relevance" 
+                  class="w-full px-4 py-3 border border-neutral-300 rounded-lg form-focus form-transition bg-white text-neutral-900">
+            <option value="">Select relevance...</option>
+            <option value="Highly Relevant">Highly Relevant - Directly applicable</option>
+            <option value="Relevant">Relevant - Mostly useful</option>
+            <option value="Slightly Relevant">Slightly Relevant - Some value</option>
+            <option value="Not Relevant">Not Relevant - Limited applicability</option>
+          </select>
+        </div>
+
+        <!-- Session Pace -->
+        <div class="space-y-3">
+          <label for="pace" class="block text-sm font-semibold text-neutral-700">
+            How was the pace of the training session?
+          </label>
+          <select name="Pace" id="pace" 
+                  class="w-full px-4 py-3 border border-neutral-300 rounded-lg form-focus form-transition bg-white text-neutral-900">
+            <option value="">Choose pace...</option>
+            <option value="Too Fast">Too Fast - Hard to keep up</option>
+            <option value="Just Right">Just Right - Perfect balance</option>
+            <option value="Too Slow">Too Slow - Could be faster</option>
+          </select>
+        </div>
+
+        <!-- Expectations -->
+        <div class="space-y-3">
+          <label for="expectations" class="block text-sm font-semibold text-neutral-700">
+            Did the session meet your expectations?
+          </label>
+          <select name="Expectations" id="expectations" 
+                  class="w-full px-4 py-3 border border-neutral-300 rounded-lg form-focus form-transition bg-white text-neutral-900">
+            <option value="">Select expectation level...</option>
+            <option value="Exceeded">Exceeded Expectations</option>
+            <option value="Met">Met Expectations</option>
+            <option value="Almost Met">Almost Met Expectations</option>
+            <option value="Didn't Meet">Didn't Meet Expectations</option>
+          </select>
+        </div>
+
+        <!-- Most Valuable Part -->
+        <div class="space-y-3">
+          <label for="valuable" class="block text-sm font-semibold text-neutral-700">
+            Which aspect of the training was most valuable to you?
+          </label>
+          <select name="Valuable Part" id="valuable" 
+                  class="w-full px-4 py-3 border border-neutral-300 rounded-lg form-focus form-transition bg-white text-neutral-900">
+            <option value="">Choose most valuable aspect...</option>
+            <option value="Schematic Design">Schematic Design & Capture</option>
+            <option value="PCB Layout">PCB Layout Techniques</option>
+            <option value="Design Rules">Design Rules & Guidelines</option>
+            <option value="Software Tools">Software Tools & Workflow</option>
+            <option value="Practical Exercises">Hands-on Practical Exercises</option>
+            <option value="Q&A Sessions">Q&A and Discussion</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <!-- Interaction -->
+        <div class="space-y-3">
+          <label for="interaction" class="block text-sm font-semibold text-neutral-700">
+            Were you comfortable asking questions during the session?
+          </label>
+          <select name="Interaction" id="interaction" 
+                  class="w-full px-4 py-3 border border-neutral-300 rounded-lg form-focus form-transition bg-white text-neutral-900">
+            <option value="">Select interaction level...</option>
+            <option value="Very Comfortable">Very Comfortable - Asked freely</option>
+            <option value="Comfortable">Comfortable - Asked when needed</option>
+            <option value="Somewhat Comfortable">Somewhat Comfortable - Limited questions</option>
+            <option value="Uncomfortable">Uncomfortable - Hesitant to ask</option>
+          </select>
+        </div>
+
+        <!-- Venue Accessibility -->
+        <div class="space-y-3">
+          <label for="accessibility" class="block text-sm font-semibold text-neutral-700">
+            How easy was it to locate the training venue?
+          </label>
+          <select name="Venue Accessibility" id="accessibility" 
+                  class="w-full px-4 py-3 border border-neutral-300 rounded-lg form-focus form-transition bg-white text-neutral-900">
+            <option value="">Choose accessibility...</option>
+            <option value="Very Easy">Very Easy - Clear directions</option>
+            <option value="Easy">Easy - Minor navigation needed</option>
+            <option value="Manageable">Manageable - Some difficulty</option>
+            <option value="Difficult">Difficult - Hard to find</option>
+          </select>
+        </div>
+
+        <!-- Venue Comfort -->
+        <div class="space-y-3">
+          <label for="comfort" class="block text-sm font-semibold text-neutral-700">
+            How would you rate the training venue comfort and facilities?
+          </label>
+          <select name="Venue Comfort" id="comfort" 
+                  class="w-full px-4 py-3 border border-neutral-300 rounded-lg form-focus form-transition bg-white text-neutral-900">
+            <option value="">Rate venue comfort...</option>
+            <option value="Excellent">Excellent - Very comfortable</option>
+            <option value="Good">Good - Comfortable environment</option>
+            <option value="Average">Average - Adequate facilities</option>
+            <option value="Poor">Poor - Uncomfortable conditions</option>
+          </select>
+        </div>
+
+        <!-- Additional Feedback -->
+        <div class="space-y-3">
+          <label for="suggestions" class="block text-sm font-semibold text-neutral-700">
+            Additional feedback, suggestions, or recommendations
+          </label>
+          <textarea name="Suggestions" id="suggestions" rows="5" 
+                    placeholder="Share any specific suggestions for improvement, topics you'd like to see covered, or general feedback about your learning experience..."
+                    class="w-full px-4 py-3 border border-neutral-300 rounded-lg form-focus form-transition bg-white text-neutral-900 resize-vertical"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="pt-6">
+          <button type="submit" 
+                  class="w-full gradient-bg text-white font-semibold py-4 px-8 rounded-lg form-transition hover-lift hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary/20">
+            <span class="flex items-center justify-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+              </svg>
+              Submit Feedback
+            </span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="hidden bg-white rounded-xl shadow-lg border border-green-200 p-8 text-center success-animation">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-neutral-800 mb-4">Thank You!</h3>
+      <p class="text-neutral-600 mb-6">
+        Your feedback has been submitted successfully. It helps us continuously improve our PCB design training programs.
+      </p>
+      <div class="text-sm text-neutral-500">
+        The IT-vate Solutions Team
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-800 text-white py-12 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <div class="flex items-center justify-center mb-6">
+          <span class="text-2xl font-bold text-white">IT-vate</span>
+          <span class="text-2xl font-medium text-secondary ml-1">Solutions</span>
+        </div>
+        <p class="text-neutral-400 mb-6 max-w-2xl mx-auto">
+          Embedded with Excellence - Providing world-class embedded systems, IoT development, and professional training services.
+        </p>
+        <div class="space-y-2 text-sm text-neutral-400">
+          <p>📍 MZ-20, Future Tower, 48-49, Main Boulevard, Jubilee Town Housing Scheme, Lahore</p>
+          <p>📧 info@itvatesolutions.com | 📞 +92 303 8411166</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Form submission handling
+    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Simple validation
+      const requiredFields = ['rating', 'clarity', 'relevance', 'pace', 'expectations'];
+      let isValid = true;
+      
+      requiredFields.forEach(field => {
+        const element = document.getElementById(field);
+        if (!element.value.trim()) {
+          element.classList.add('border-red-500');
+          isValid = false;
+        } else {
+          element.classList.remove('border-red-500');
+        }
+      });
+      
+      if (!isValid) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      
+      // Submit form
+      const formData = new FormData(this);
+      
+      fetch(this.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          document.getElementById('feedbackForm').parentElement.style.display = 'none';
+          document.getElementById('successMessage').classList.remove('hidden');
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      })
+      .catch(error => {
+        alert('There was an error submitting your feedback. Please try again.');
+      });
+    });
+
+    // Add interactive hover effects
+    document.querySelectorAll('select, textarea').forEach(element => {
+      element.addEventListener('focus', function() {
+        this.parentElement.classList.add('transform', 'scale-[1.02]');
+      });
+      
+      element.addEventListener('blur', function() {
+        this.parentElement.classList.remove('transform', 'scale-[1.02]');
+      });
+    });
+  </script>
+</body>
+</html>
